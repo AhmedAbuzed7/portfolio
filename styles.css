@@ -152,7 +152,8 @@ img {
 }
 
 .nav-link:hover,
-.nav-link:focus-visible {
+.nav-link:focus-visible,
+.nav-link.active {
   color: var(--text-primary);
   background: rgba(255, 255, 255, 0.05);
 }
@@ -217,7 +218,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -229,7 +230,7 @@ img {
 }
 
 .mobile-menu a {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-secondary);
   transition: color 0.2s;
@@ -608,9 +609,9 @@ section {
   gap: 24px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .skills-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -628,8 +629,6 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
@@ -642,7 +641,7 @@ section {
   background: var(--bg-card);
   border-radius: var(--card-radius);
   border: 1px solid var(--border-color);
-  padding: 24px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -657,6 +656,44 @@ section {
 .contact-card i {
   font-size: 1.25rem;
   color: var(--accent-indigo);
+}
+
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-indigo);
 }
 
 .footer {
